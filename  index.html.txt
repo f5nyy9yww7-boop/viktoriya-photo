@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Виктория Демина — Фотограф | Ижевск, Можга, Пычас</title>
+  <meta name="description" content="Фотограф Виктория Демина. Портретные, семейные, свадебные и контент-съёмки в Ижевске, Можге и Пычасе." />
+
+  <!-- Подключение шрифтов Google Fonts: Cormorant Garamond и Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Подключение Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Настройка фирменной палитры и типографики -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#faf8f5',
+            surface: '#ffffff',
+            ink: '#1f1e1c',
+            muted: '#6e6a63',
+            accent: '#b89f86',
+            'accent-dark': '#9c8269',
+            sand: '#e8e2d9',
+            'sand-soft': '#e9e3da',
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Inter"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+          },
+          boxShadow: {
+            soft: '0 24px 50px rgba(31, 30, 28, 0.08)',
+            card: '0 10px 30px rgba(31, 30, 28, 0.04)',
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-cream text-ink font-sans font-light antialiased selection:bg-accent/25 selection:text-ink overflow-x-hidden">
+
+  <!-- Шапка сайта -->
+  <header class="sticky top-0 z-40 bg-cream/90 backdrop-blur-md border-b border-sand">
+    <div class="max-w-6xl mx-auto px-5 h-[68px] flex items-center justify-between gap-4">
+      <!-- Имя / логотип -->
+      <a href="#" class="font-serif text-[21px] sm:text-[23px] font-semibold uppercase tracking-[0.06em] text-ink whitespace-nowrap">
+        Виктория Демина
+      </a>
+
+      <!-- Навигация для планшетов и десктопа -->
+      <nav aria-label="Основная навигация" class="hidden md:flex items-center gap-7 text-[14px] text-muted">
+        <a href="#portfolio" class="hover:text-ink transition-colors duration-200">Портфолио</a>
+        <a href="#services" class="hover:text-ink transition-colors duration-200">Услуги и цены</a>
+        <a href="#process" class="hover:text-ink transition-colors duration-200">Как проходит съёмка</a>
+        <a href="#contact" class="hover:text-ink transition-colors duration-200">Контакты</a>
+      </nav>
+
+      <!-- Кнопка записи и переключатель мобильного меню -->
+      <div class="flex items-center gap-2">
+        <a
+          href="https://vk.ru/viktoriyabulich777"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center px-4 sm:px-5 py-2.5 rounded-full bg-ink text-white text-[13px] font-normal tracking-[0.02em] hover:bg-[#363430] transition-all duration-200"
+        >
+          Записаться
+        </a>
+
+        <button
+          id="mobileMenuBtn"
+          type="button"
+          aria-label="Открыть меню"
+          aria-expanded="false"
+          class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-full border border-sand text-ink hover:bg-sand/40 transition-colors"
+        >
+          <svg id="menuIconOpen" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+          <svg id="menuIconClose" class="w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6l-12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Выпадающее мобильное меню -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-sand bg-cream/95 backdrop-blur-md">
+      <nav class="max-w-6xl mx-auto px-5 py-4 flex flex-col gap-1 text-[15px] text-muted">
+        <a href="#portfolio" class="mobile-nav-link py-2.5 px-3 rounded-xl hover:bg-sand/40 hover:text-ink transition-colors">Портфолио</a>
+        <a href="#services" class="mobile-nav-link py-2.5 px-3 rounded-xl hover:bg-sand/40 hover:text-ink transition-colors">Услуги и цены</a>
+        <a href="#process" class="mobile-nav-link py-2.5 px-3 rounded-xl hover:bg-sand/40 hover:text-ink transition-colors">Как проходит съёмка</a>
+        <a href="#contact" class="mobile-nav-link py-2.5 px-3 rounded-xl hover:bg-sand/40 hover:text-ink transition-colors">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Первый экран (Hero) -->
+    <section class="py-14 sm:py-20 md:py-24">
+      <div class="max-w-6xl mx-auto px-5 grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-14 items-center">
+        <!-- Текстовый блок -->
+        <div class="md:col-span-7">
+          <div class="inline-flex items-center gap-2.5 text-[12px] uppercase tracking-[0.14em] text-accent-dark mb-5">
+            <span class="w-6 h-px bg-accent inline-block"></span>
+            <span>Ижевск • Можга • Пычас</span>
+          </div>
+
+          <h1 class="font-serif font-medium text-[42px] sm:text-[56px] lg:text-[68px] leading-[1.1] tracking-[-0.01em] text-ink mb-6">
+            Живые кадры, в которых есть <em class="italic font-normal text-accent-dark">вы</em>
+          </h1>
+
+          <p class="text-[16px] leading-[1.7] text-muted max-w-[490px] mb-8">
+            Фотограф Виктория Демина. Снимаю искренние портреты, тёплые семейные истории, свадьбы и эстетичный контент. Помогаю с образом, локацией и позированием, чтобы на съёмке было легко.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-3">
+            <a
+              href="https://vk.ru/viktoriyabulich777"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center px-7 py-3.5 rounded-full bg-ink text-white text-[14px] font-normal tracking-[0.02em] hover:bg-[#363430] hover:-translate-y-0.5 transition-all duration-200"
+            >
+              Записаться в ВК
+            </a>
+            <a
+              href="#portfolio"
+              class="inline-flex items-center justify-center px-7 py-3.5 rounded-full border border-ink text-ink text-[14px] font-normal tracking-[0.02em] hover:bg-ink hover:text-white transition-all duration-200"
+            >
+              Смотреть работы
+            </a>
+          </div>
+        </div>
+
+        <!-- Вертикальная фотография -->
+        <div class="md:col-span-5">
+          <div class="relative rounded-2xl overflow-hidden aspect-[4/5] bg-sand-soft shadow-soft">
+            <img
+              src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=900&q=85"
+              alt="Портретная фотография — Виктория Демина"
+              onerror="this.onerror=null;this.src='https://placehold.co/800x1000/e9e3da/6e6a63?text=Виктория+Демина';"
+              class="w-full h-full object-cover block"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Блок «Портфолио» -->
+    <section id="portfolio" class="py-16 sm:py-20">
+      <div class="max-w-6xl mx-auto px-5">
+        <div class="flex flex-col gap-2.5 mb-8 sm:mb-10">
+          <span class="text-[12px] uppercase tracking-[0.14em] text-accent-dark">Портфолио</span>
+          <h2 class="font-serif font-medium text-[34px] sm:text-[44px] lg:text-[48px] leading-[1.15] text-ink">
+            Избранные серии
+          </h2>
+        </div>
+
+        <!-- Фильтры портфолио -->
+        <div class="flex flex-wrap gap-2 mb-7" role="tablist" aria-label="Фильтр портфолио">
+          <button
+            type="button"
+            data-filter="all"
+            class="filter-btn px-4 py-2 rounded-full text-[13px] border transition-all duration-200 bg-ink text-white border-ink"
+          >
+            Все работы
+          </button>
+          <button
+            type="button"
+            data-filter="portrait"
+            class="filter-btn px-4 py-2 rounded-full text-[13px] border border-sand text-muted hover:border-ink hover:text-ink transition-all duration-200 bg-transparent"
+          >
+            Портреты
+          </button>
+          <button
+            type="button"
+            data-filter="family"
+            class="filter-btn px-4 py-2 rounded-full text-[13px] border border-sand text-muted hover:border-ink hover:text-ink transition-all duration-200 bg-transparent"
+          >
+            Семья и Love Story
+          </button>
+          <button
+            type="button"
+            data-filter="wedding"
+            class="filter-btn px-4 py-2 rounded-full text-[13px] border border-sand text-muted hover:border-ink hover:text-ink transition-all duration-200 bg-transparent"
+          >
+            Свадьбы
+          </button>
+        </div>
+
+        <!-- Сетка из 6 фотографий -->
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-3.5 sm:gap-5">
+          <!-- Карточка 1: Портрет (открывается в лайтбоксе) -->
+          <button
+            type="button"
+            data-category="portrait"
+            data-caption="Индивидуальный портрет"
+            class="gallery-item lightbox-trigger group relative rounded-2xl overflow-hidden aspect-[3/4] bg-sand-soft text-left cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80"
+              alt="Индивидуальный портрет"
+              loading="lazy"
+              onerror="this.onerror=null;this.src='https://placehold.co/600x800/e9e3da/6e6a63?text=Портрет';"
+              class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+            />
+            <div class="absolute inset-x-0 bottom-0 pt-10 pb-3 px-3.5 bg-gradient-to-t from-ink/70 via-ink/25 to-transparent text-white text-[12px] sm:text-[13px] tracking-[0.03em] opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300">
+              Индивидуальный портрет
+            </div>
+          </button>
+
+          <!-- Карточка 2: Семья (открывается в лайтбоксе) -->
+          <button
+            type="button"
+            data-category="family"
+            data-caption="Семейная история"
+            class="gallery-item lightbox-trigger group relative rounded-2xl overflow-hidden aspect-[3/4] bg-sand-soft text-left cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=800&q=80"
+              alt="Семейная история"
+              loading="lazy"
+              onerror="this.onerror=null;this.src='https://placehold.co/600x800/e9e3da/6e6a63?text=Семья';"
+              class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+            />
+            <div class="absolute inset-x-0 bottom-0 pt-10 pb-3 px-3.5 bg-gradient-to-t from-ink/70 via-ink/25 to-transparent text-white text-[12px] sm:text-[13px] tracking-[0.03em] opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300">
+              Семейная история
+            </div>
+          </button>
+
+          <!-- Карточка 3: Свадьба (прямой переход на пост в ВК) -->
+          <a
+            href="https://vk.ru/wall553873595_988"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-category="wedding"
+            class="gallery-item group relative block rounded-2xl overflow-hidden aspect-[3/4] bg-sand-soft text-left cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80"
+              alt="Свадебный день — смотреть серию в ВК"
+              loading="lazy"
+              onerror="this.onerror=null;this.src='https://placehold.co/600x800/e9e3da/6e6a63?text=Свадьба';"
+              class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+            />
+            <!-- Плашка перехода в ВК -->
+            <span class="absolute top-3 left-3 right-3 sm:right-auto inline-flex items-center justify-center gap-1 px-3 py-1.5 rounded-full bg-cream/92 backdrop-blur-md text-ink text-[11px] sm:text-[12px] font-medium shadow-sm group-hover:bg-ink group-hover:text-white transition-colors duration-200">
+              Смотреть серию в ВК ↗
+            </span>
+            <div class="absolute inset-x-0 bottom-0 pt-12 pb-3.5 px-3.5 bg-gradient-to-t from-ink/75 via-ink/30 to-transparent text-white text-[12px] sm:text-[13px] tracking-[0.03em]">
+              Свадебный день
+            </div>
+          </a>
+
+          <!-- Карточка 4: Контент / Портрет (открывается в лайтбоксе) -->
+          <button
+            type="button"
+            data-category="portrait"
+            data-caption="Контент и стиль"
+            class="gallery-item lightbox-trigger group relative rounded-2xl overflow-hidden aspect-[3/4] bg-sand-soft text-left cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80"
+              alt="Контент и стиль"
+              loading="lazy"
+              onerror="this.onerror=null;this.src='https://placehold.co/600x800/e9e3da/6e6a63?text=Контент';"
+              class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+            />
+            <div class="absolute inset-x-0 bottom-0 pt-10 pb-3 px-3.5 bg-gradient-to-t from-ink/70 via-ink/25 to-transparent text-white text-[12px] sm:text-[13px] tracking-[0.03em] opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300">
+              Контент и стиль
+            </div>
+          </button>
+
+          <!-- Карточка 5: Love Story (открывается в лайтбоксе) -->
+          <button
+            type="button"
+            data-category="family"
+            data-caption="Love Story"
+            class="gallery-item lightbox-trigger group relative rounded-2xl overflow-hidden aspect-[3/4] bg-sand-soft text-left cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=800&q=80"
+              alt="Love Story"
+              loading="lazy"
+              onerror="this.onerror=null;this.src='https://placehold.co/600x800/e9e3da/6e6a63?text=Love+Story';"
+              class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+            />
+            <div class="absolute inset-x-0 bottom-0 pt-10 pb-3 px-3.5 bg-gradient-to-t from-ink/70 via-ink/25 to-transparent text-white text-[12px] sm:text-[13px] tracking-[0.03em] opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300">
+              Love Story
+            </div>
+          </button>
+
+          <!-- Карточка 6: Свадьба (прямой переход на пост в ВК) -->
+          <a
+            href="https://vk.ru/wall553873595_988"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-category="wedding"
+            class="gallery-item group relative block rounded-2xl overflow-hidden aspect-[3/4] bg-sand-soft text-left cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80"
+              alt="Детали и эмоции — смотреть свадебную серию в ВК"
+              loading="lazy"
+              onerror="this.onerror=null;this.src='https://placehold.co/600x800/e9e3da/6e6a63?text=Свадьба';"
+              class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+            />
+            <!-- Плашка перехода в ВК -->
+            <span class="absolute top-3 left-3 right-3 sm:right-auto inline-flex items-center justify-center gap-1 px-3 py-1.5 rounded-full bg-cream/92 backdrop-blur-md text-ink text-[11px] sm:text-[12px] font-medium shadow-sm group-hover:bg-ink group-hover:text-white transition-colors duration-200">
+              Смотреть серию в ВК ↗
+            </span>
+            <div class="absolute inset-x-0 bottom-0 pt-12 pb-3.5 px-3.5 bg-gradient-to-t from-ink/75 via-ink/30 to-transparent text-white text-[12px] sm:text-[13px] tracking-[0.03em]">
+              Детали и эмоции
+            </div>
+          </a>
+        </div>
+
+        <!-- Кнопка под галереей для перехода к свадебной серии ВКонтакте -->
+        <div class="mt-9 flex justify-center">
+          <a
+            href="https://vk.ru/wall553873595_988"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border border-accent text-ink bg-surface hover:bg-ink hover:text-white hover:border-ink text-[14px] font-normal tracking-[0.02em] shadow-card transition-all duration-200"
+          >
+            <span>Смотреть свадебную серию в ВК</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Блок «Услуги и стоимость» -->
+    <section id="services" class="py-16 sm:py-20">
+      <div class="max-w-6xl mx-auto px-5">
+        <div class="flex flex-col gap-2.5 mb-10">
+          <span class="text-[12px] uppercase tracking-[0.14em] text-accent-dark">Услуги и стоимость</span>
+          <h2 class="font-serif font-medium text-[34px] sm:text-[44px] lg:text-[48px] leading-[1.15] text-ink">
+            Форматы съёмок
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+          <!-- Индивидуальная -->
+          <article class="bg-surface border border-sand rounded-2xl p-7 sm:p-8 flex flex-col justify-between shadow-card hover:border-accent hover:-translate-y-0.5 transition-all duration-200">
+            <div>
+              <h3 class="font-serif font-medium text-[28px] sm:text-[30px] text-ink mb-2">Индивидуальная</h3>
+              <div class="text-[15px] font-medium text-accent-dark mb-4">от 3 000 ₽ / час</div>
+              <p class="text-[14px] leading-[1.65] text-muted mb-5">
+                Для тех, кто хочет красивые, живые портреты для себя или соцсетей без зажатости и неловких поз.
+              </p>
+              <ul class="space-y-2 text-[14px] text-ink mb-7">
+                <li class="flex items-start gap-2.5"><span class="text-accent select-none">—</span><span>Помощь в подборе образа и локации</span></li>
+                <li class="flex items-start gap-2.5"><span class="text-accent select-none">—</span><span>Подсказки по позированию всю съёмку</span></li>
+                <li class="flex items-start gap-2.5"><span class="text-accent select-none">—</span><span>От 40 кадров в авторской цветокоррекции</span></li>
+                <li class="flex items-start gap-2.5"><span class="text-accent select-none">—</span><span>Деликатная ретушь крупных портретов</span></li>
+              </ul>
+            </div>
+            <a
+              href="https://vk.ru/viktoriyabulich777"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 rounded-full border border-ink text-ink text-[14px] font-normal hover:bg-ink hover:text-white transition-all duration-200"
+            >
+              Записаться
+            </a>
+          </article>
+
+          <!-- Семейная и Love Story -->
+          <article class="bg-surface border border-sand rounded-2xl p-7 sm:p-8 flex flex-col justify-between shadow-card hover:border-accent hover:-translate-y-0.5 transition-all duration-200">
+            <div>
+              <h3 class="font-serif font-medium text-[28px] sm:text-[30px] text-ink mb-2">Семейная и Love Story</h3>
+              <div class="text-[15px] font-medium text-accent-dark mb-4">от 3 500 ₽ / час</div>
+              <p class="text-[14px] leading-[1.65] text-muted mb-5">
+                Тёплые прогулки, уютные домашние или студийные кадры про искреннюю любовь и близость.
+              </p>
+              <ul class="space-y-2 text-[14px] text-ink mb-7">
+                <li class="flex items-start gap-2.5"><span class="text-accent select-none">—</span><span>Комфортный темп даже с маленькими детьми</span></li>
+                <li class="flex items-start gap-2.5"><span class="text-accent select-none">—</span><span>Советы по сочетанию одежды для всей семьи</span></li>
+                <li class="flex items-start gap-2.5"><span class="text-accent select-none">—</span><span>От 50 готовых фотографий в обработке</span></li>
+                <li class="flex items-start gap-2.5"><span class="text-accent select-none">—</span><span>Передача через удобную онлайн-галерею</span></li>
+              </ul>
+            </div>
+            <a
+              href="https://vk.ru/viktoriyabulich777"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 rounded-full border border-ink text-ink text-[14px] font-normal hover:bg-ink hover:text-white transition-all duration-200"
+            >
+              Записаться
+            </a>
+          </article>
+
+          <!-- Свадьбы и репортаж -->
+          <article class="bg-surface border border-sand rounded-2xl p-7 sm:p-8 flex flex-col justify-between shadow-card hover:border-accent hover:-translate-y-0.5 transition-all duration-200">
+            <div>
+              <h3 class="font-serif font-medium text-[28px] sm:text-[30px] text-ink mb-2">Свадьбы и репортаж</h3>
+              <div class="text-[15px] font-medium text-accent-dark mb-4">Стоимость по запросу</div>
+              <p class="text-[14px] leading-[1.65] text-muted mb-5">
+                ЗАГС, прогулка, банкет или камерный семейный праздник — сохраню атмосферу и настоящие эмоции.
+              </p>
+              <ul class="space-y-2 text-[14px] text-ink mb-7">
+                <li class="flex items-start gap-2.5"><span class="text-accent select-none">—</span><span>Почасовая оплата или пакет на весь день</span></li>
+                <li class="flex items-start gap-2.5"><span class="text-accent select-none">—</span><span>Анонс первых кадров уже в ближайшие дни</span></li>
+                <li class="flex items-start gap-2.5"><span class="text-accent select-none">—</span><span>Выезд по Ижевску, Можге и Пычасу</span></li>
+                <li class="flex items-start gap-2.5"><span class="text-accent select-none">—</span><span>Помощь в планировании тайминга прогулки</span></li>
+              </ul>
+            </div>
+            <a
+              href="https://vk.ru/viktoriyabulich777"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 rounded-full border border-ink text-ink text-[14px] font-normal hover:bg-ink hover:text-white transition-all duration-200"
+            >
+              Узнать стоимость
+            </a>
+          </article>
+
+          <!-- Контент для бизнеса -->
+          <article class="bg-surface border border-sand rounded-2xl p-7 sm:p-8 flex flex-col justify-between shadow-card hover:border-accent hover:-translate-y-0.5 transition-all duration-200">
+            <div>
+              <h3 class="font-serif font-medium text-[28px] sm:text-[30px] text-ink mb-2">Контент для бизнеса</h3>
+              <div class="text-[15px] font-medium text-accent-dark mb-4">от 3 500 ₽ / час</div>
+              <p class="text-[14px] leading-[1.65] text-muted mb-5">
+                Эстетичный визуал для экспертов, мастеров и брендов, который вызывает доверие и продаёт.
+              </p>
+              <ul class="space-y-2 text-[14px] text-ink mb-7">
+                <li class="flex items-start gap-2.5"><span class="text-accent select-none">—</span><span>Составление плана кадров под ваши задачи</span></li>
+                <li class="flex items-start gap-2.5"><span class="text-accent select-none">—</span><span>Разноплановые фото: портреты, процесс, детали</span></li>
+                <li class="flex items-start gap-2.5"><span class="text-accent select-none">—</span><span>Готовый визуал для ленты и сайта на месяц вперёд</span></li>
+                <li class="flex items-start gap-2.5"><span class="text-accent select-none">—</span><span>Оперативная отдача готового материала</span></li>
+              </ul>
+            </div>
+            <a
+              href="https://vk.ru/viktoriyabulich777"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 rounded-full border border-ink text-ink text-[14px] font-normal hover:bg-ink hover:text-white transition-all duration-200"
+            >
+              Обсудить съёмку
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Блок «Как проходит работа» (4 шага) -->
+    <section id="process" class="py-16 sm:py-20">
+      <div class="max-w-6xl mx-auto px-5">
+        <div class="flex flex-col gap-2.5 mb-10">
+          <span class="text-[12px] uppercase tracking-[0.14em] text-accent-dark">Комфортный подход</span>
+          <h2 class="font-serif font-medium text-[34px] sm:text-[44px] lg:text-[48px] leading-[1.15] text-ink">
+            Как проходит работа
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-7">
+          <div class="pt-5 border-t border-sand">
+            <div class="font-serif text-[28px] text-accent-dark mb-2">01</div>
+            <h3 class="font-serif font-medium text-[24px] text-ink mb-2">Знакомство</h3>
+            <p class="text-[14px] leading-[1.65] text-muted">
+              Вы пишете в ВК, рассказываете о задаче и желаемой дате. Вместе выбираем формат и настроение.
+            </p>
+          </div>
+
+          <div class="pt-5 border-t border-sand">
+            <div class="font-serif text-[28px] text-accent-dark mb-2">02</div>
+            <h3 class="font-serif font-medium text-[24px] text-ink mb-2">Подготовка</h3>
+            <p class="text-[14px] leading-[1.65] text-muted">
+              Подбираю локацию в Ижевске, Можге или Пычасе и подсказываю, какая одежда лучше сработает в кадре.
+            </p>
+          </div>
+
+          <div class="pt-5 border-t border-sand">
+            <div class="font-serif text-[28px] text-accent-dark mb-2">03</div>
+            <h3 class="font-serif font-medium text-[24px] text-ink mb-2">Съёмка</h3>
+            <p class="text-[14px] leading-[1.65] text-muted">
+              Никаких неловких пауз — мягко направляю, показываю кадры в процессе и ловлю живые моменты.
+            </p>
+          </div>
+
+          <div class="pt-5 border-t border-sand">
+            <div class="font-serif text-[28px] text-accent-dark mb-2">04</div>
+            <h3 class="font-serif font-medium text-[24px] text-ink mb-2">Готовые фото</h3>
+            <p class="text-[14px] leading-[1.65] text-muted">
+              Вы получаете ссылку на красивую онлайн-галерею со всеми обработанными кадрами в высоком качестве.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Финальный блок записи -->
+    <section id="contact" class="py-16 sm:py-20">
+      <div class="max-w-6xl mx-auto px-5">
+        <div class="bg-surface border border-sand rounded-3xl px-6 py-12 sm:py-16 text-center shadow-card">
+          <span class="block text-[12px] uppercase tracking-[0.14em] text-accent-dark mb-3">Запись на съёмку</span>
+          <h2 class="font-serif font-medium text-[34px] sm:text-[46px] leading-[1.15] text-ink mb-4">
+            Сохраним ваш важный момент?
+          </h2>
+          <p class="text-[15px] leading-[1.7] text-muted max-w-[500px] mx-auto mb-8">
+            Напишите мне ВКонтакте — обсудим идею, подберём удобную дату и локацию в Ижевске, Можге или Пычасе.
+          </p>
+          <a
+            href="https://vk.ru/viktoriyabulich777"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center px-8 py-4 rounded-full bg-ink text-white text-[14px] font-normal tracking-[0.02em] hover:bg-[#363430] hover:-translate-y-0.5 transition-all duration-200"
+          >
+            Написать Виктории в ВК
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Подвал -->
+  <footer class="border-t border-sand py-9 text-[13px] text-muted">
+    <div class="max-w-6xl mx-auto px-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+      <div>© 2026 Виктория Демина — Фотограф</div>
+      <div>Ижевск • Можга • Пычас</div>
+      <a
+        href="https://vk.ru/viktoriyabulich777"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:text-ink transition-colors underline underline-offset-4 decoration-sand hover:decoration-ink"
+      >
+        vk.ru/viktoriyabulich777
+      </a>
+    </div>
+  </footer>
+
+  <!-- Лайтбокс для просмотра портретных и семейных фото -->
+  <div
+    id="lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Просмотр фотографии"
+    class="fixed inset-0 z-50 hidden items-center justify-center bg-ink/92 backdrop-blur-sm p-4 sm:p-8"
+  >
+    <button
+      id="lightboxClose"
+      type="button"
+      aria-label="Закрыть просмотр"
+      class="absolute top-4 right-4 sm:top-6 sm:right-6 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-2xl leading-none transition-colors cursor-pointer"
+    >
+      &times;
+    </button>
+
+    <div class="max-w-4xl w-full flex flex-col items-center">
+      <img
+        id="lightboxImg"
+        src=""
+        alt="Увеличенная фотография"
+        class="max-w-full max-h-[82vh] rounded-xl object-contain shadow-2xl"
+      />
+      <p id="lightboxCaption" class="mt-4 text-[14px] text-white/85 tracking-[0.03em] text-center"></p>
+    </div>
+  </div>
+
+  <!-- Интерактивность: мобильное меню, фильтры портфолио и лайтбокс -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      try {
+        // 1. Мобильное меню
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIconOpen = document.getElementById('menuIconOpen');
+        const menuIconClose = document.getElementById('menuIconClose');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        const toggleMobileMenu = (forceClose = false) => {
+          if (!mobileMenu || !mobileMenuBtn) return;
+          const isCurrentlyOpen = !mobileMenu.classList.contains('hidden');
+          const shouldOpen = forceClose ? false : !isCurrentlyOpen;
+
+          mobileMenu.classList.toggle('hidden', !shouldOpen);
+          mobileMenuBtn.setAttribute('aria-expanded', String(shouldOpen));
+          if (menuIconOpen && menuIconClose) {
+            menuIconOpen.classList.toggle('hidden', shouldOpen);
+            menuIconClose.classList.toggle('hidden', !shouldOpen);
+          }
+        };
+
+        if (mobileMenuBtn) {
+          mobileMenuBtn.addEventListener('click', () => toggleMobileMenu());
+        }
+
+        mobileNavLinks.forEach((link) => {
+          link.addEventListener('click', () => toggleMobileMenu(true));
+        });
+
+        // 2. Фильтрация карточек портфолио
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterButtons.forEach((btn) => {
+          btn.addEventListener('click', () => {
+            const selectedFilter = btn.dataset.filter;
+
+            filterButtons.forEach((b) => {
+              const isActive = b === btn;
+              b.classList.toggle('bg-ink', isActive);
+              b.classList.toggle('text-white', isActive);
+              b.classList.toggle('border-ink', isActive);
+              b.classList.toggle('bg-transparent', !isActive);
+              b.classList.toggle('text-muted', !isActive);
+              b.classList.toggle('border-sand', !isActive);
+            });
+
+            galleryItems.forEach((item) => {
+              const matches = selectedFilter === 'all' || item.dataset.category === selectedFilter;
+              item.classList.toggle('hidden', !matches);
+            });
+          });
+        });
+
+        // 3. Лайтбокс только для портретов и семейных фото (свадебные ведут напрямую в ВК)
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxCaption = document.getElementById('lightboxCaption');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const lightboxTriggers = document.querySelectorAll('.lightbox-trigger');
+
+        const openLightbox = (src, alt, caption) => {
+          if (!lightbox || !lightboxImg) return;
+          lightboxImg.src = src;
+          lightboxImg.alt = alt || caption || 'Фотография';
+          if (lightboxCaption) {
+            lightboxCaption.textContent = caption || '';
+          }
+          lightbox.classList.remove('hidden');
+          lightbox.classList.add('flex');
+          document.body.classList.add('overflow-hidden');
+        };
+
+        const closeLightbox = () => {
+          if (!lightbox) return;
+          lightbox.classList.add('hidden');
+          lightbox.classList.remove('flex');
+          document.body.classList.remove('overflow-hidden');
+          if (lightboxImg) lightboxImg.src = '';
+        };
+
+        lightboxTriggers.forEach((item) => {
+          item.addEventListener('click', () => {
+            const img = item.querySelector('img');
+            if (img) {
+              openLightbox(img.src, img.alt, item.dataset.caption);
+            }
+          });
+        });
+
+        if (lightboxClose) {
+          lightboxClose.addEventListener('click', closeLightbox);
+        }
+
+        if (lightbox) {
+          lightbox.addEventListener('click', (event) => {
+            if (event.target === lightbox) {
+              closeLightbox();
+            }
+          });
+        }
+
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape' && lightbox && !lightbox.classList.contains('hidden')) {
+            closeLightbox();
+          }
+        });
+      } catch (error) {
+        console.error('Ошибка инициализации интерфейса:', error);
+      }
+    });
+  </script>
+</body>
+</html>
